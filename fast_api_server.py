@@ -70,10 +70,10 @@ async def upload_log(file: UploadFile = File(...)):
             shutil.copyfileobj(file.file, buffer)
 
         # Parse and process the uploaded log file
-        # parse_logs(input_path=raw_log_path, output_dir=PARSED_LOG_DIR, save_processed_dir=PROCESSED_DATA_DIR)
+        parse_logs(input_path=raw_log_path, output_dir=PARSED_LOG_DIR, save_processed_dir=PROCESSED_DATA_DIR)
 
         # Load processed test data (X_test) and original lines
-        X_test_path = os.path.join(PROCESSED_DATA_DIR, "x_test_tf-idf_v5.npy")
+        X_test_path = os.path.join(PROCESSED_DATA_DIR, "x_tf-idf_v5.npy")
         lines_path = os.path.join(PROCESSED_DATA_DIR, "original_lines.txt")
 
         # Check if required processed files exist
